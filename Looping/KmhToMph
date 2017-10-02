@@ -1,0 +1,16 @@
+// Creates a table of conversion
+// 40-120 KMH to MPH
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	cout << setw(15) << left << "MPH" << right << "KMH" << endl;
+	cout << fixed << showpoint << setprecision(2);
+	for (int i = 40; i <= 140; i += 10) {
+		double mph = i * 0.6214;
+		cout << setw(15) << left << mph << right << i << endl;
+	}
+	system("pause");
+	return 0;
+}
