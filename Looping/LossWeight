@@ -1,0 +1,19 @@
+// We calculate a consistent loss of weight
+// Four pounds lost a month
+// User inputs original weight
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	double startWeight;
+	cout << "Enter starting weight: ";
+	cin >> startWeight;
+	cout << setw(10) << left << "Month" << right << "Weight" << endl;
+	for (int i = 1; i <= 6; i++) {
+		double endWeight = startWeight - (i * 4);
+		cout << setw(10) << left << i << right << endWeight << endl;
+	}
+	system("pause");
+	return 0;
+}
