@@ -1,0 +1,36 @@
+// Measures user input to record
+// Least and Greatest number entered
+#include <iostream>
+using namespace std;
+
+int main() {
+	int input;
+	int greatest;
+	int least;
+	cout << "Enter -89 to quit" << endl;
+	cout << "Enter number: ";
+	cin >> input;
+	greatest = input;
+	least = input;
+	if (input == -89) {
+		return 0;
+	}
+	while (input != -89) {
+		cout << "Enter number: ";
+		cin >> input;
+		if (input == -89) {
+			break;
+		}
+		else if (input < least) {
+			least = input;
+		}
+		else if (input > greatest) {
+			greatest = input;
+		}
+	}
+	cout << "Greatest: " << greatest << endl;
+	cout << "Least: " << least << endl;
+
+	system("pause");
+	return 0;
+}
