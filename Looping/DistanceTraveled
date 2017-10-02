@@ -1,0 +1,23 @@
+// Prompts user for hours and speed
+// Calculates distance and then displays distance per hour
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+int main() {
+	int speed, time;
+	int i = 1;
+	cout << "Speed(MPH): ";
+	cin >> speed;
+	cout << "Time(H): ";
+	cin >> time;
+	cout << setw(10) << left << "Hour" << right << "Miles Traveled" << endl;
+	cout << string(24, '-') << endl;
+	for (i; i <= time; i++) {
+		double distance = speed * i;
+		cout << setw(20) << left << i << right << distance << endl;
+	}
+	system("pause");
+	return 0;
+}
