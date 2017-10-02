@@ -1,0 +1,16 @@
+// Fee increase at .03 percent over 6 years
+// Fee begins at 3000
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	cout << setw(10) << left << "Year" << right <<"Fee Increase" << endl;
+	for (int i = 1; i <= 6; i++) {
+		double feeIncrease = 3000 * (i * .03);
+		double totalFee = 3000 + feeIncrease;
+		cout << setw(10) << left << i << right << totalFee << endl;
+	}
+	system("pause");
+	return 0;
+}
