@@ -1,0 +1,19 @@
+// Prompts user for int input
+// Takes int, validates for postiive value
+// Then calculates 1 + 2... + n
+#include <iostream>
+using namespace std;
+
+int main() {
+	int user_int;
+	int run_total = 0;
+	cout << "Please enter a positive integer: ";
+	cin >> user_int;
+	if (user_int > 0) {
+		for (int i = 1; i <= user_int; i++)
+			run_total += i;
+	}
+	cout << "Sum: " << run_total << endl;
+	system("pause");
+	return 0;
+}
