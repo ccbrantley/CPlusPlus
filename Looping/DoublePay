@@ -1,0 +1,30 @@
+// This program doubles pay every day
+// Starting at .01
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	int daysWorked;
+	double pay = .01;
+	double runTotal = 0;
+	cout << "How many days have you worked this month?";
+	cin >> daysWorked;
+	cout << fixed << showpoint << setprecision(2);
+	if ((daysWorked <= 31) && (daysWorked >= 1)) {
+		cout << setw(10) << left << "Day" << right << "Pay" << endl;
+		for (int i = 1; i <= daysWorked; i++) {
+			cout << setw(10) << left << i << right << "$" << pay << endl;
+			runTotal += pay;
+			pay += pay;
+		}
+	}
+	else {
+		cout << "Invalid Input for Days Worked..." << endl;
+		system("pause");
+		return 0;
+	}
+	cout << "Total Pay: $" << runTotal << endl;
+	system("pause");
+	return 0;
+}
