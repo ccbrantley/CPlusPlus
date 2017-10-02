@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int k = 32;
+	char y;
+	for (k; k < 128; k++) {
+		char y = k;
+		cout << y;
+	}
+	system("pause");
+	return 0;
+}
