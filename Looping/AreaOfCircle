@@ -1,0 +1,19 @@
+// Doubling the radius variable
+// We calculate area of a circle
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+	int r = 1;
+	cout << setw(15) << left << "Radius" << right << "Area" << endl;
+	cout << fixed << showpoint << setprecision(2);
+	for (r; r <= 8; r *= 2) {
+		double area = 3.14 * pow(r, 2);
+		cout << setw(15) << left << r << right << area << endl;
+	}
+
+	system("pause");
+	return 0;
+}
