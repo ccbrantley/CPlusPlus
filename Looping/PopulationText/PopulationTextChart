@@ -1,0 +1,26 @@
+// Reads file and outputs popuplation by year
+// Using a Text Graphic Chart
+// Code dependent on text format
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <array>
+using namespace std;
+int main() {
+	ifstream inputFile;
+	inputFile.open("People.txt");
+	cout << "Greensboro Population" << endl;;
+	double value;
+	string temp;
+	string years[6] = { "1910", "1930", "1950", "1970", "1990", "2010" };
+	while (inputFile >> value){
+		value = (value / 1000);
+		string temp(value, '*');
+		int i = 0;
+		cout << years[i] << " " << temp << endl;
+		i++;
+	}
+	cout << "(* = 1000)" << endl;
+	system("pause");
+	return 0;
+}
