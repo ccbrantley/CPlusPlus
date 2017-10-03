@@ -1,0 +1,29 @@
+// With Compliant format text file
+// Program counts begininng/end month
+// Total Rain and calculates Average rain
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+//cout << inputFile.rdbuf();
+int main() {
+	ifstream inputFile;
+	inputFile.open("Rainfall.txt");
+	string value, value2;
+	double rain;
+	double rainRun = 0;
+	int monthRun = 0;
+	inputFile >> value;
+	inputFile >> value2;
+	cout << "From " << value << " to " << value2 << endl;
+	while (inputFile >> rain) {
+		monthRun++;
+		rainRun += rain;
+	}
+	cout << "Total Rain: " << rainRun << endl;
+	cout << "Average Rain: " << (rainRun / monthRun) << endl;
+
+	inputFile.close();
+	system("pause");
+	return 0;
+}
