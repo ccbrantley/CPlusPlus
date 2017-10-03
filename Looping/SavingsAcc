@@ -3,6 +3,7 @@
 // Input by user
 // Collects Data for Consolidation
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 int main() {
@@ -19,24 +20,29 @@ int main() {
 	double interest = 0;
 	double endingBal = startBal;
 	for (int i = 1; i <= 3; i++) {
-			cout << "Month " << i;
-			cout << " Total Deposit: ";
-			cin >> deposit;
-			endingBal += deposit;
-			depositRun += deposit;
-			cout << "Total Withdrawn: ";
-			cin >> withdrawn;
-			endingBal -= withdrawn;
-			withdrawnRun += withdrawn;
-			interest = (((startBal + endingBal)/2) * monthRate );
-			interestRun += interest;
-			endingBal += interest;
-		}
+		cout << "Month " << i;
+		cout << " Total Deposit: ";
+		cin >> deposit;
+		endingBal += deposit;
+		depositRun += deposit;
+		cout << "Total Withdrawn: ";
+		cin >> withdrawn;
+		endingBal -= withdrawn;
+		withdrawnRun += withdrawn;
+		interest = (((startBal + endingBal) / 2) * monthRate);
+		interestRun += interest;
+		endingBal += interest;
+	}
 	cout << "Starting Balance: " << startBal << endl;
 	cout << "Total Deposits: " << depositRun << endl;
 	cout << "Total Withdrawn: " << withdrawnRun << endl;
 	cout << "Total Interest: " << interestRun << endl;
 	cout << "Final Balance: " << endingBal << endl;
+	ofstream inputFile;
+	inputFile.open("SavingsAccount.txt");
+	inputFile << startBal << endl << depositRun << endl << withdrawnRun << endl
+		<< interestRun << endl << endingBal << endl;
+	inputFile.close();
 	system("pause");
 	return 0;
 }
