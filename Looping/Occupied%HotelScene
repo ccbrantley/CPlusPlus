@@ -1,0 +1,30 @@
+// Hotel Scenario: 6 floors, 120 suites, 20 per floor
+// Prompt user for occupied rooms per floor
+// To print out percent occupied
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	
+	double occupied = 0;
+	for (int i = 10; i <= 16; i++) {
+		if (i != 13) {
+			int patrons = -1;
+			while ((patrons < 0) || (patrons > 20)) {
+				cout << "Suites Occupied floor " << i << ": ";
+				cin >> patrons;
+			}
+			occupied += patrons;
+		}
+		else { cout << "No suites on floor 13." << endl; }
+	}
+	cout << showpoint << fixed << setprecision(2);
+	double percentOccupied = occupied / 120;
+	cout << "Total Suites: 120" << endl;
+	cout << "Suites Occupied: " << occupied << endl;
+	cout << "Percent Occupied: " << percentOccupied << endl;
+
+	system("pause");
+	return 0;
+}
