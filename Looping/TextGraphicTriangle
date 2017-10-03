@@ -1,0 +1,20 @@
+// Text Graphic Triangle
+// Creates triangle out of '+'
+#include<iostream>
+#include <string>
+using namespace std;
+
+int main() {;
+	for (int i = 1; i <= 7; i += 2) {
+		string temp(i, '+');
+		cout << temp << endl;
+	}
+	for (int i = 5; i >= 1; i -= 2) {
+		string temp(i, '+');
+		cout << temp << endl;
+	}
+
+	
+	system("pause");
+	return 0;
+}
