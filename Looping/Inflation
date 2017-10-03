@@ -1,0 +1,21 @@
+// Inflation Rate by user input
+// over 10 years set $1000
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	double inflation;
+	cout << "Enter inflation percentage(.00): ";
+	cin >> inflation;
+	cout << setw(15) << left << "Year" << right << "Inflation" << endl;
+	cout << fixed << showpoint << setprecision(2);
+	double finalAmount = 1000;
+	double changeAmount = finalAmount - (1000 * (1 / (1 + inflation))); 
+	for (int i = 1; i <= 10; i++) {
+		finalAmount -= changeAmount;
+		cout << setw(15) << left << i << right << finalAmount << endl;	
+	}
+	system("pause");
+	return 0;
+}
