@@ -1,0 +1,23 @@
+// Creates a rectangle out of X
+// User inputs length and width
+#include <iostream>
+#include<algorithm>
+using namespace std;
+
+int main() {
+	int width, length;
+	cout << "Width: ";
+	cin >> width;
+	cout << "Length: ";
+	cin >> length;
+	int maxNum = max(width, length);
+	int minNum = min(width, length);
+	for (int j = 0; j < minNum; j++){
+		for (int i = 0; i < maxNum; i++) {
+			cout << "X";
+		}
+		cout << endl;
+	}
+	system("pause");
+	return 0;
+}
