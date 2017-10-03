@@ -1,0 +1,70 @@
+// Calculator guessing game
+// Includes /,*,+,-
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+	char menu = ' ';
+	unsigned seed = time(0);
+	srand(seed);
+	while (menu != 'Q' && menu != 'q') {
+		int j = ((rand() % (100 - 1 + 1)) + 1);
+		int k = ((rand() % (100 - 1 + 1)) + 1);
+		bool correct;
+		double answer;
+		cout << " +" << endl << " -" << endl << " *" << endl
+			<< " /" << endl << " Q" << endl;
+		cin >> menu;
+		switch (menu) {
+		case '+':
+			correct = false;
+			while (correct == false) {
+				cout << j << " + " << k << " = ";
+				cin >> answer;
+				if ((j + k) == answer) {
+					cout << "Correct." << endl;
+					correct = true;
+				}
+				else { cout << "Incorrect." << endl; }
+			}
+		case '-':
+			correct = false;
+			while (correct == false) {
+				cout << j << " - " << k << " = ";
+				cin >> answer;
+				if ((j - k) == answer) {
+					cout << "Correct." << endl;
+					correct = true;
+				}
+				else { cout << "Incorrect." << endl; }
+			}
+		case '*':
+			correct = false;
+			while (correct == false) {
+				cout << j << " * " << k << " = ";
+				cin >> answer;
+				if ((j * k) == answer) {
+					cout << "Correct." << endl;
+					correct = true;
+				}
+				else { cout << "Incorrect." << endl; }
+			}
+		case '/':
+			correct = false;
+			while (correct == false) {
+				cout << j << " / " << k << " = ";
+				cin >> answer;
+				if ((((double)j / k) <= (answer+.01)) && (((double)j / k) >= (answer - .01))) {
+					cout << "Correct." << endl;
+					correct = true;
+				}
+				else { cout << "Incorrect." << endl; }
+			}
+		}
+	}
+	cout << "Program closing." << endl;
+	system("pause");
+	return 0;
+}
