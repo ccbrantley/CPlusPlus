@@ -1,0 +1,34 @@
+// This program takes input and calculates growth
+// Of organisms based on input percentage and days
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	int startOrganism = 0;
+	double dailyIncrease = 0;
+	int numberDays = 0;
+	while (startOrganism < 2) {
+		cout << "Starting # Organisms: ";
+		cin >> startOrganism;
+	}
+	while (dailyIncrease <= 0) {
+		cout << "Daily Increase: ";
+		cin >> dailyIncrease;
+	}
+	while (numberDays < 1){
+		cout << "Number days: ";
+		cin >> numberDays;
+}
+	cout << setw(15) << left << "Day" << right << "Organisms" << endl;
+	double dailyOrganisms;
+	double totalOrganisms = startOrganism;
+	cout << fixed << showpoint << setprecision(2);
+	for (int i = 1; i <= numberDays; i++) {
+		dailyOrganisms = (totalOrganisms * dailyIncrease);
+		totalOrganisms += dailyOrganisms;
+		cout << setw(15) << left << i << right << totalOrganisms << endl;
+	}
+	system("pause");
+	return 0;
+}
