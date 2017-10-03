@@ -1,0 +1,42 @@
+// Scenario for Savings Account
+// Interest rate, deposit, withdrawn, balance
+// Input by user
+// Collects Data for Consolidation
+#include <iostream>
+using namespace std;
+
+int main() {
+	double startBal, interestRate;
+	cout << "Starting Balance: ";
+	cin >> startBal;
+	cout << "Annual Interest Rate: ";
+	cin >> interestRate;
+	double monthRate = (interestRate / 12);
+	double deposit, withdrawn;
+	double depositRun = 0;
+	double withdrawnRun = 0;
+	double interestRun = 0;
+	double interest = 0;
+	double endingBal = startBal;
+	for (int i = 1; i <= 3; i++) {
+			cout << "Month " << i;
+			cout << " Total Deposit: ";
+			cin >> deposit;
+			endingBal += deposit;
+			depositRun += deposit;
+			cout << "Total Withdrawn: ";
+			cin >> withdrawn;
+			endingBal -= withdrawn;
+			withdrawnRun += withdrawn;
+			interest = (((startBal + endingBal)/2) * monthRate );
+			interestRun += interest;
+			endingBal += interest;
+		}
+	cout << "Starting Balance: " << startBal << endl;
+	cout << "Total Deposits: " << depositRun << endl;
+	cout << "Total Withdrawn: " << withdrawnRun << endl;
+	cout << "Total Interest: " << interestRun << endl;
+	cout << "Final Balance: " << endingBal << endl;
+	system("pause");
+	return 0;
+}
