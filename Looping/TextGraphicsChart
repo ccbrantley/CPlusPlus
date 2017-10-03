@@ -1,0 +1,25 @@
+// Scenario for store sales represented
+// With charts using * per $100 
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	int store1, store2, store3;
+	cout << "Enter sales rounded to nearest $100." << endl;
+	cout << "Store 1 Sales: ";
+	cin >> store1;
+	cout << "Store 2 Sales: ";
+	cin >> store2;
+	cout << "Store 3 Sales: ";
+	cin >> store3;
+	cout << "(* = 100)" << endl;
+	string temp((store1/100), '*');
+	cout << "Store 1: " << temp << endl;
+	string temp2((store2 / 100), '*');
+	cout << "Store 2: " << temp2 << endl;
+	string temp3((store3 / 100), '*');
+	cout << "Store 2: " << temp3 << endl;
+	system("pause");
+	return 0;
+	}
