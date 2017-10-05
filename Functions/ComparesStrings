@@ -1,0 +1,31 @@
+// Compares two strings from user input
+// Demonstrates function use with
+// Function prototypes
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+string upperCaseIt(string);
+bool sameString(string, string);
+int main() {
+	string s1, s2;
+	cout << "Input: ";
+	cin >> s1;
+	s1 = upperCaseIt(s1);
+	cout << "Input: ";
+	cin >> s2;
+	s2 = upperCaseIt(s2);
+	bool isSame = sameString(s1, s2);
+	if (isSame == true) cout << "Strings are the same." << endl;
+	else cout << "Strings are not the same." << endl;
+	system("pause");
+	return 0;
+}
+string upperCaseIt(string s) {
+	transform(s.begin(), s.end(), s.begin(), toupper);
+	return s;
+}
+bool sameString(string s1, string s2) {
+	if (s1 == s2) return true;
+	else return false;
+}
