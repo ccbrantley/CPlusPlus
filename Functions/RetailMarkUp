@@ -1,0 +1,20 @@
+// Calculate Retail Price from WholeSale price and mark up percent
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+double calculateRetail(double wholeCost, double markUp) {
+	return (wholeCost * markUp) + wholeCost;
+}
+int main() {
+	double wholeCost, markUp;
+	cout << "Whole Sale Cost: ";
+	cin >> wholeCost;
+	cout << "Mark Up(.00): ";
+	cin >> markUp;
+	double retailCost = calculateRetail(wholeCost, markUp);
+	cout << fixed << showpoint << setprecision(2);
+	cout << "Retail Price: " << retailCost << endl;
+	system("pause");
+	return 0;
+}
