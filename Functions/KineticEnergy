@@ -1,0 +1,20 @@
+// Kinetic Energy Calculator
+// Demonstrates use of function
+#include <iostream>
+#include <iomanip>
+using namespace std;
+double kineticEnergy(double mass, double velocity) {
+	return .50 * mass * (velocity * velocity);
+}
+int main() {
+	double mass, velocity;
+	cout << "Mass(KG): ";
+	cin >> mass;
+	cout << "Velocity(MPS): ";
+	cin >> velocity;
+	double kinetic_Energy = kineticEnergy(mass, velocity);
+	cout << fixed << showpoint << setprecision(2);
+	cout << "Kinetic Energy: " << kinetic_Energy << endl;;
+	system("pause");
+	return 0;
+}
