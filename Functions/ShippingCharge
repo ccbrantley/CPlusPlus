@@ -1,0 +1,39 @@
+// Demonstrates Function Use
+// Function Prototypes
+// Calculates Shipping Charge
+#include <iostream>
+using namespace std;
+double calculateCharge(double, double);
+
+int main() {
+	double weight = 1, distance;
+	cout << "To exit, input 0 in prompt for weight." << endl;
+	cout << "Weight(KG): ";
+	cin >> weight;
+	while (weight != 0) {
+		cout << "Distance: ";
+		cin >> distance;
+		double shippingCharge = calculateCharge(weight, distance);
+		cout << "Shipping Charge: $" << shippingCharge << endl;
+		system("pause");
+		cout << "Weight(KG): ";
+		cin >> weight;
+	}
+	return 0;
+}
+double calculateCharge(double weight, double distance) {
+	double rate;
+	if (weight <= 2) {
+		rate = 3.10;
+	}
+	if ((weight > 2) && (weight <= 6)) {
+		rate = 4.20;
+	}
+	if ((weight > 6) && (weight <= 10)) {
+		rate = 5.30;
+	}
+	if (weight > 10){
+		rate = 6.40;
+	}
+	return distance / 500 * rate;
+}
