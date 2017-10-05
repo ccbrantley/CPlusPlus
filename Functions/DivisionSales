@@ -1,0 +1,49 @@
+// Function Prototypes
+// Mapping Division & sales
+// Demonstrating use of Functions
+#include<iostream>
+#include <iomanip>
+#include <string>
+#include <algorithm>
+#include <map>
+using namespace std;
+double getSales(string division);
+void findHighest(map<string, double>);
+
+int main() {
+	map<string, double> divisionLookup;
+	divisionLookup["North East"] = getSales("North East");
+	divisionLookup["South East"] = getSales("South East");
+	divisionLookup["North West"] = getSales("North West");
+	divisionLookup["South West"] = getSales("South West");
+	findHighest(divisionLookup);
+}
+double getSales(string division) {
+	double quarterSales;
+	cout << division << " Quarterly Sales: ";
+	cin >> quarterSales;
+	return quarterSales;
+}
+void findHighest(map<string, double> division) {
+	map<string, double> divisionLookup = division;
+	double highestValue = max(divisionLookup["North East"], max(divisionLookup["South East"],
+		max(divisionLookup["North West"], divisionLookup["South West"])));
+	string divisionName;
+	if (divisionLookup["North Easst"] == highestValue) {
+		divisionName = "North East";
+
+	}
+	if (divisionLookup["South East"] == highestValue) {
+		divisionName = "South East";
+	}
+	if (divisionLookup["North West"] == highestValue) {
+		divisionName = "North West";
+	}
+	if (divisionLookup["South West"] == highestValue) {
+		divisionName = "South West";
+	}
+	cout << endl << "Top Sales" << endl;
+	cout << fixed << showpoint << setprecision(2);
+	cout << divisionName << ": " << highestValue << endl;
+	system("pause");
+}
