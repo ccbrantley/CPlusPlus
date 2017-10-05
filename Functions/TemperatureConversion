@@ -1,0 +1,18 @@
+// Temperature Conversion Demonstrating Function use
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+double Celsius(int f) {
+	return 5.00 / 9 * (f - 32);
+}
+int main() {
+	cout << setw(10) << left << "Celsius" << right << "Fahrenheit" << endl;
+	cout << fixed << showpoint << setprecision(2);
+	for (int i = 1; i <= 20; i++) {
+		double conversion = Celsius(i);
+		cout << setw(10) << left << conversion << right << i << endl;
+	}
+	system("pause");
+	return 0;
+}
