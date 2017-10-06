@@ -1,0 +1,42 @@
+// Testing out Reference Paramters
+// Program is used to calculate average of scores
+#include<iostream>
+#include<algorithm>
+#include <iomanip>
+using namespace std;
+void getJudgeData(double&, double&, double&, double&, double&);
+double calcScore(double&, double&, double&, double&, double&);
+int findLowest(double&, double&, double&, double&, double&);
+int findHighest(double&, double&, double&, double&, double&);
+int main() {
+	double first ,second, third, fourth, fifth;
+	getJudgeData(first, second, third, fourth, fifth);
+	double averageScore = calcScore(first, second, third, fourth, fifth);
+	cout << showpoint << fixed << setprecision(1);
+	cout << "Average Score: " << averageScore << endl;
+	system("pause");
+	return 0;
+}
+void getJudgeData(double &first, double &second, double &third, double &fourth, double &fifth) {
+	cout << "Judge's Score: ";
+	cin >> first;
+	cout << "Judge's Score: ";
+	cin >> second;
+	cout << "Judge's Score: ";
+	cin >> third;
+	cout << "Judge's Score: ";
+	cin >> fourth;
+	cout << "Judge's Score: ";
+	cin >> fifth;
+}
+double calcScore(double &first, double &second, double &third, double &fourth, double &fifth) {
+	double lowestScore = findLowest(first, second, third, fourth, fifth);
+	double highestScore = findHighest(first, second, third, fourth, fifth);
+	return (first + second + third + fourth + fifth - lowestScore - highestScore) / 3;
+}
+int findLowest(double &first, double &second, double &third, double &fourth, double &fifth) {
+	return min(first, min(second, min(third, min(fourth, fifth))));
+}
+int findHighest(double &first, double &second, double &third, double &fourth, double &fifth) {
+	return max(first, max(second, max(third, max(fourth, fifth))));
+}
