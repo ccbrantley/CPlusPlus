@@ -1,6 +1,5 @@
 // Christopher Brantley
 // 2/04/2018
-// CSC 234
 // This is my own work.
 #include <iostream>
 #include <fstream>
