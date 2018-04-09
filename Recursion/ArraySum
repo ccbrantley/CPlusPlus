@@ -1,0 +1,28 @@
+#include <iostream>;
+#include <string>;
+using namespace std;
+int add(int*, int);
+int main() {
+	int size_array, temporary;
+	int* user_array;
+	cout << "Size of Array: ";
+	cin >> size_array;
+	user_array = new int[size_array];
+	for (int x = 0; x < size_array; x++) {
+		cout << "Array " << x + 1 << ": ";
+		cin >> user_array[x];
+	}
+	if (size_array >= 1) {
+		cout << add(user_array, size_array) << endl;
+	}
+	system("pause");
+	return 0;
+}
+int add(int* user_array, int size_array) {
+	int product = 0;
+	if (size_array == 1) {
+		return product += user_array[0];
+	}
+	else { product += add(user_array, size_array - 1) + user_array[size_array - 1]; }
+	return product;
+}
